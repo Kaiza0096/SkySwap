@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>マイページ - SkySwap</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav>
+    <h1>SkySwap</h1>
+    <div>
+      <a href="/home">ホーム</a>
+      <a href="/upload">投稿する</a>
+      <a href="/logout">ログアウト</a>
+    </div>
+  </nav>
+
+  <main>
+    <h2><%= username %> さんのマイページ</h2>
+
+    <h3>自分の投稿</h3>
+    <div class="grid">
+      <% myPosts.forEach(post => { %>
+        <div class="card">
+          <img src="<%= post.image_path %>">
+          <p><%= post.caption %></p>
+        </div>
+      <% }) %>
+    </div>
+
+    <h3>交換した写真</h3>
+    <div class="grid">
+      <% receivedPosts.forEach(post => { %>
+        <div class="card">
+          <img src="<%= post.image_path %>">
+          <p><%= post.caption %></p>
+          <small>投稿者: <%= post.username %></small>
+        </div>
+      <% }) %>
+    </div>
+  </main>
+</body>
+</html>

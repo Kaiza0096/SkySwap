@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ホーム - SkySwap</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav>
+    <h1>SkySwap</h1>
+    <div>
+      <a href="/upload">投稿する</a>
+      <a href="/mypage">マイページ</a>
+      <a href="/logout">ログアウト</a>
+    </div>
+  </nav>
+
+  <main>
+    <h2>ようこそ、<%= username %> さん</h2>
+    <p>空や雲の写真を1日1枚だけ交換できます。</p>
+
+    <div class="grid">
+      <% posts.forEach(post => { %>
+        <div class="card">
+          <img src="<%= post.image_path %>">
+          <p><%= post.caption %></p>
+          <small>投稿者: <%= post.username %></small>
+        </div>
+      <% }) %>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>交換結果 - SkySwap</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="box">
+    <h1>交換結果</h1>
+
+    <% if (!post) { %>
+      <p>まだ交換できる写真がありません。</p>
+    <% } else { %>
+      <p>誰かの空と交換しました。</p>
+      <div class="card">
+        <img src="<%= post.image_path %>">
+        <p><%= post.caption %></p>
+        <small>投稿者: <%= post.username %></small>
+      </div>
+    <% } %>
+
+    <a href="/home">ホームへ</a>
+  </div>
+</body>
+</html>

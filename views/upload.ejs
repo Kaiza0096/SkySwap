@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>投稿 - SkySwap</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="box">
+    <h1>空の写真を投稿</h1>
+
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+      <input type="file" name="photo" accept="image/*" required>
+      <textarea name="caption" placeholder="ひとこと"></textarea>
+      <button type="submit">投稿して交換する</button>
+    </form>
+
+    <a href="/home">ホームへ戻る</a>
+  </div>
+</body>
+</html>

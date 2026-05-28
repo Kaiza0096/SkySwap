@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>登録 - SkySwap</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="box">
+    <h1>SkySwap</h1>
+    <h2>新規登録</h2>
+
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <form method="POST" action="/register">
+      <input type="text" name="username" placeholder="ユーザー名" required>
+      <input type="email" name="email" placeholder="メールアドレス" required>
+      <input type="password" name="password" placeholder="パスワード" required>
+      <button type="submit">登録</button>
+    </form>
+
+    <a href="/login">ログインはこちら</a>
+  </div>
+</body>
+</html>
