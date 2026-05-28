@@ -8,6 +8,16 @@ const path = require("path");
 const app = express();
 const db = new sqlite3.Database("./database/app.db");
 
+const fs = require("fs");
+
+if (!fs.existsSync("database")) {
+  fs.mkdirSync("database");
+}
+
+if (!fs.existsSync("uploads")) {
+  fs.mkdirSync("uploads");
+}
+
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
